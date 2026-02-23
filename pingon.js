@@ -17,3 +17,19 @@ function setup(){
 function draw(){
   
 }
+
+function movimentoBolinha(){
+  circle(xbolinha, ybolinha, diametro);
+  
+  xbolinha += velocidadexbolinha;
+  ybolinha += velocidadeybolinha;
+  if(xbolinha + raio> width || xbolinha -raio <0){
+    velocidadexbolinha *= -1;
+  }
+  if(ybolinha + raio > height || ybolinha -raio <0){
+    velocidadeybolinha *= -1
+  }
+}
+function raquetes(){
+  rect(xraquete,yraquete,10,90)
+}
