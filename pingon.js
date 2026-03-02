@@ -30,7 +30,12 @@ function draw(){
   npc(dificuldade)
   if(keyIsDown(UP_ARROW)){
     yraquete -= 10}
+  if(keyIsDown(DOWN_ARROW)){
+    yraquete += 10}
   if(xbolinha -raio < xraquete + 10 & ybolinha -raio < yraquete + 90 & ybolinha +raio > yraquete ){
+    velocidadexbolinha *= -1;
+    raquetada.play()}
+  if(xbolinha +raio > xraqueteoponente & ybolinha -raio < yraqueteoponente + 90 & ybolinha +raio > yraqueteoponente ){
     velocidadexbolinha *= -1;
     raquetada.play()}
 }
