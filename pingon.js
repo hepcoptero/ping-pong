@@ -12,6 +12,7 @@ let meuspontos = 0;
 let pontosoponente = 0;
 let dificuldade = "normal"
 let trilha,ponto,raquetada;
+
 function preload(){
   trilha = loadSound("trilha.mp3")
   ponto = loadSound("ponto.mp3")
@@ -38,6 +39,27 @@ function draw(){
   if(xbolinha +raio > xraqueteoponente & ybolinha -raio < yraqueteoponente + 90 & ybolinha +raio > yraqueteoponente ){
     velocidadexbolinha *= -1;
     raquetada.play()}
+  
+  textSize(18);
+  textAlign(CENTER);
+  fill(color(255,0,233));
+  rect(150,10,40,20);
+  fill(255);
+  text(meuspontos,170,26);
+  fill(color(255,0,233));
+  rect(450,10,40,20);
+  fill(255);
+  text(pontosoponentes);
+  
+  if(xbolinha>595){
+    meuspontos += 1;
+    ponto.play()
+  }
+  
+  if(xbolinha<10){
+    meuspontos += 1;
+    ponto.play()
+  }
 }
 
 function movimentoBolinha(){
@@ -52,6 +74,15 @@ function movimentoBolinha(){
     velocidadeybolinha *= -1
   }
 }
-function raquetes(){
+function raquetes(xraquete,yraquete){
   rect(xraquete,yraquete,10,90)
+}
+function npc(){
+  var nivel = 30
+  if(dificuldade ==="facil"){
+    nivel = 100;
+}
+  if(dificuldade ==="normal"){
+    nivel = 20;
+  }
 }
